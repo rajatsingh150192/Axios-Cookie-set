@@ -12,7 +12,7 @@ Step 2: Add following lines to your server.js or index.js
         }
        app.use(cors(corsOptions));
    
-Step 3: Write the below code  react Application
+Step 3: Write the below code in react Application
         const login = async(login_data)=>{
             const api_response = await axios.post('http://localhost:4001/api/auth/login',login_data,{
               withCredentials: true
