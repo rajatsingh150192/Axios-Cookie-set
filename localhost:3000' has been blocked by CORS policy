@@ -4,21 +4,21 @@ Step 1: npm install cors --save
 
 Step 2: Add following lines to your server.js or index.js
 
-  const cors = require('cors');
-  const corsOptions ={
-    origin:'http://localhost:3000', // eg. this is ORIGIN URL like Reactjs project is running at 3000 port number
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-  }
-   app.use(cors(corsOptions));
+        const cors = require('cors');
+        const corsOptions ={
+          origin:'http://localhost:3000', // eg. this is ORIGIN URL like Reactjs project is running at 3000 port number
+          credentials:true,            //access-control-allow-credentials:true
+          optionSuccessStatus:200
+        }
+       app.use(cors(corsOptions));
    
-Write the below code  react Application -----------------
-const login = async(login_data)=>{
-    const api_response = await axios.post('http://localhost:4001/api/auth/login',login_data,{
-      withCredentials: true
-    });
-    if(rapi_response.status==200)
-    setCurrentUser(res.data);// This is state to set logged user data of login api 
-}
+Step 3: Write the below code  react Application
+        const login = async(login_data)=>{
+            const api_response = await axios.post('http://localhost:4001/api/auth/login',login_data,{
+              withCredentials: true
+            });
+            if(rapi_response.status==200)
+            setCurrentUser(res.data);// This is state to set logged user data of login api 
+        }
 
 
