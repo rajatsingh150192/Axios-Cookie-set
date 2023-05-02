@@ -20,5 +20,19 @@ Step 3: Write the below code in react Application
             if(rapi_response.status==200)
             setCurrentUser(res.data);// This is state to set logged user data of login api 
         }
+        
+ Step 4: ---- For Clear cookie from Nodes-------------
+        //Logout function in react js application
+               const logout = async()=>{
+                        axios.defaults.withCredentials = true;
+                        await axios.post("http://localhost:8800/api/auth/logout");// Node Api for logout
+                        setCurrentUser(null)
+                }
+         //Logout function in nodejs application
+        export const logout = async (req,res)=>{
+                res.clearCookie("access_token")
+                console.log("-------- Cookie cleard-----")
+                return res.status(200).json("Your logged out successfully")
+        }
 
 
