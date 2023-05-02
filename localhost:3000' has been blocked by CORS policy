@@ -30,7 +30,10 @@ Step 3: Write the below code in react Application
                 }
          //Logout function in nodejs application
         export const logout = async (req,res)=>{
-                res.clearCookie("access_token")
+                res.clearCookie("access_token",{
+                        sameSite:"none",
+                        secure:true
+                })
                 console.log("-------- Cookie cleard-----")
                 return res.status(200).json("Your logged out successfully")
         }
